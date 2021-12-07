@@ -6,7 +6,9 @@ from pprint import pprint
 app = Flask(__name__, static_url_path="")
 
 jsonName = "project.json"
-os.chdir("C:/Users/matte/Onedrive/Documenti/Project")
+# workingPath = "C:/Users/matte/Onedrive/Documenti/Project"
+workingPath = input("Inserisci il percorso dove sono presenti i progetti: ")
+os.chdir(workingPath)
 def unificaJson():
     lista = os.listdir()
     listaCartelle = []
@@ -14,8 +16,9 @@ def unificaJson():
         if not os.path.isfile(x):
             if controlloJson(x): 
                 pathFile = x+"/"+jsonName
-                file = open(pathFile, "r")
-                fileJson = json.load(file)
+                with open(pathFile) as file:
+                    fileJson = json.load(file)
+                fileJson["path"] = workingPath + "/" + x
                 listaCartelle.append(fileJson)
     return listaCartelle
 

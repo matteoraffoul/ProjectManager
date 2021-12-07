@@ -1,4 +1,10 @@
 
+body{
+    background-color:  #121212;
+    color: #FFFFFF;
+    text-emphasis: 89% white;
+}
+
 table {
     border: solid;
     width: 90%;
@@ -6,3 +12,25 @@ table {
     padding: 1% 0 1% 1%;
     border-radius: 10px;
 }
+
+a {
+    border: solid black 2px;
+    border-radius: 10px;
+    padding: 1% 5% 1% 4%;
+    background-color: #23A8F2;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    background-color: #106897;
+
+}
+
+tr{
+    padding-top: 10%;
+}
+
+tr td,tr th {
+    padding-bottom: 1%;
+  }
