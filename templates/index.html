@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Titolo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static', filename='index.css')}}">  
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Descrizione</th>
+            <th>Data di creazione</th>
+            <th></th>
+        </tr>
+        {% for el in files %}
+        <tr>
+            <td>{{el.name}}</td>
+            <td>{{el.description}}</td>
+            <td>{{el.creationDate}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

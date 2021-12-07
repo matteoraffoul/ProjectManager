@@ -1,0 +1,53 @@
+[{
+ "creationDate" : "2021-12-06",
+ "language": "python",
+ "name": "ProjectManager",
+ "description": "Gestore di progetti",
+ "mainFile": "app.py",
+ "extraFiles": [
+     {
+         "name" : "Index",
+         "description": "Pagina principale del sito",
+         "path" : "templates/index.html",
+         "language": "html"
+     },
+     {
+        "name" : "Index",
+        "description": "CSS della pagina principale del sito",
+        "path" : "static/index.css",
+        "language": "css"
+    },
+    {
+        "name" : "Server",
+        "description": "Server flask per creazione pagina web",
+        "path" : "server.py",
+        "language": "python"
+    }  
+ ] 
+},{
+    "creationDate" : "2021-12-06",
+    "language": "python",
+    "name": "ProjectManager",
+    "description": "Gestore di progetti",
+    "mainFile": "app.py",
+    "extraFiles": [
+        {
+            "name" : "Index",
+            "description": "Pagina principale del sito",
+            "path" : "templates/index.html",
+            "language": "html"
+        },
+        {
+           "name" : "Index",
+           "description": "CSS della pagina principale del sito",
+           "path" : "static/index.css",
+           "language": "css"
+       },
+       {
+           "name" : "Server",
+           "description": "Server flask per creazione pagina web",
+           "path" : "server.py",
+           "language": "python"
+       }  
+    ] 
+   }]
