@@ -6,26 +6,47 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Titolo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' href="{{url_for('static', filename='index.css')}}">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static', filename='index.css')}}">
 </head>
 
-<body>
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>Descrizione</th>
-            <th>Data di creazione</th>
-            <th></th>
-        </tr>
-        {% for el in files %}
-        <tr>
-            <td>{{el.name}}</td>
-            <td>{{el.description}}</td>
-            <td>{{el.creationDate}}</td>
-            <td>  <a href='vscode://file/{{el.path}}'>VSCODE</a>   <td>
-        </tr>
-        {% endfor %}
+<body class="bg-dark">
+    <table id="progetti" class="table table-dark table-striped ">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrizione</th>
+                <th>Data di creazione</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for el in files %}
+            <tr>
+                <td>{{el.name}}</td>
+                <td>{{el.description}}</td>
+                <td>{{el.creationDate}}</td>
+                <td> <a class="btn btn-primary" href='vscode://file/{{el.path}}'>VSCODE</a>
+                <td> <a class="btn btn-warning" href='vscode://file/{{el.path}}'>Dettagli</a>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
+<script>
+    $(document).ready(function () {
+        $('#progetti').DataTable({
+            "paging": false,
+            "info": false,
+        });
+    });
+</script>
 
 </html>

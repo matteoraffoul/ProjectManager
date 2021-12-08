@@ -1,13 +1,11 @@
 import os
-import tabulate
 import json
 from flask import Flask, render_template
-from pprint import pprint
 app = Flask(__name__, static_url_path="")
 
 jsonName = "project.json"
-# workingPath = "C:/Users/matte/Onedrive/Documenti/Project"
-workingPath = input("Inserisci il percorso dove sono presenti i progetti: ")
+workingPath = "C:/Users/matte/Onedrive/Documenti/Project"
+#workingPath = input("Inserisci il percorso dove sono presenti i progetti: ")
 os.chdir(workingPath)
 def unificaJson():
     lista = os.listdir()
@@ -38,4 +36,4 @@ def index():
 
 
 
-app.run(port=80, debug=False)
+app.run(port=80, debug=True)
